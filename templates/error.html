@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/unknown_error.css') }}">
+    <title>error</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1 class="f-big"><a href="/return/{{key}}">ABUNATOR</a></h1>
+        <hr size="2" color="#DB1D32" noshade/>
+        <div class="box01">
+            <div class="box">エラーが発生しました。<br>もう一度やり直しますか？</div>
+            <a href="/return/{{key}}" class="start">やり直す</a>
+        </div>
+        <img class="buruburu" src="../static/imgs/character_program_shock.png" alt="人工知能画像" title="人工知能の画像">
+
+    </div>
+</body>
+
+</html>

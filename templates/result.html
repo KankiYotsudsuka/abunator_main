@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/result.css') }}">
+    <title>解答画面</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1 class="f-big"><a href="/return/{{key}}">ABUNATOR</a></h1>
+        <hr size="2" color="#DB1D32" noshade/>
+        <div class="box">
+            <div>
+                <div>
+                    <!-- <img src="../imgs/{{resNo}}.png" style="width: 350px;"> -->
+                    <!--<img src="../imgs/13.png" style="width: 350px;">-->
+                    <img src="../static/imgs/{{number}}.png" style="width: 350px;" alt="name">
+                    <br>
+                </div>
+                <div class="box02">
+                    <!-- <span class="name">{{name}}</span> -->
+                    <span class="name">{{name}}</span>
+                    <br>
+                    <!-- <P>{{deal}}</P> -->
+                    <p>
+                        {{dealing}}
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="box01">
+                <a href= "/return/{{key}}" class="start">始めから</a>
+            </div>
+
+
+        </div>
+
+        <img class="smart" src="../static/imgs/smart.png" alt="人工知能画像" title="人工知能の画像">
+
+
+
+        <br>
+
+    </div>
+</body>
+
+</html>

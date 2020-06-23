@@ -1,0 +1,117 @@
+body {
+	margin: auto;
+	background: linear-gradient(#FC876E, #FCF26E ) fixed;
+}
+
+#wrap {
+	position: relative;
+	height:100%;
+	max-width: 80%;
+	background-color: #ffffff;
+	margin: 0 auto;
+}
+
+h1{
+	padding:30px 0 0 20px;
+}
+
+hr {
+	margin:-15px 0 50px 0;
+}
+
+.f-big:first-letter{
+	color:#DB1D32;
+}
+
+.f-big a:visited{
+	color: #414444;
+}
+
+.f-big a:hover{
+	opacity: 0.7;
+}
+
+a{
+	text-decoration: none ;
+	color:black;
+}
+
+.answer{
+	color:black;
+}
+.box01{
+	float:right;
+}
+
+/*やり直すボタン*/
+.start {
+	display: inline-block;
+	padding: 0.3em 1em;
+	text-decoration: none;
+	color: #FC876E;
+	border: solid 2px #FC876E;
+	border-radius: 3px;
+	transition: .4s;
+	margin-left:140px;
+	margin-top:50px;
+}
+
+.start:hover {
+	background: #FC876E;
+	color: white;
+}
+
+.box {
+	font-weight:bold;
+	position: relative;
+	margin: 50px 230px 1.5em 15px;
+	padding: 25px 65px;
+	color: #555;
+	font-size: 16px;
+	background: #FFF;
+	border: solid 3px #555;
+	box-sizing: border-box;
+	width: 350px;/*吹き出しの幅*/
+	height: 100px;
+	border-radius:10px;
+}
+
+.box:before {
+	content: "";
+	position: absolute;
+	top: 50%;/*真ん中*/
+	left: -24px;
+	margin-top: -12px;/*三角の横の幅*/
+	border: 12px solid transparent;
+	border-right: 12px solid #FFF;
+	z-index: 2;
+}
+
+.box:after {
+	content: "";
+	position: absolute;
+	top: 50%;/*真ん中*/
+	left: -30px;
+	margin-top: -14px;
+	border: 14px solid transparent;/*三角を作る*/
+	border-right: 14px solid #555;
+	z-index: 1;
+}
+
+img {
+	margin-left:220px;
+	width:300px;
+}
+
+.buruburu {
+    display: inline-block;
+    animation: hurueru .2s  infinite;
+}
+
+@keyframes hurueru {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(2px, 2px) rotateZ(1deg)}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}

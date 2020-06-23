@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=S, initial-scale=1.0">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/main.css') }}">
+        <title>質問画面</title>
+    </head>
+
+    <body>
+        <div id="wrap">
+
+            <h1 class="f-big"><a href="/return/{{key}}">ABUNATOR</a></h1>
+            <hr size="2" color="#DB1D32" noshade/>
+
+            <div id="TotleAnswer">
+                <import sqlMethods>
+                <p class="dai" style="margin-left: 12px;">Question</p>
+                <div class="box">
+                    <p>
+
+                        <!--質問内容はここに記述する。{{変数}}の形で多分ok-->
+                        その動物は{{question}}？
+
+                    </p>
+
+                </div>
+
+                <!-- Culumn, question, answer, passのvalueをsubmitで送る -->
+                <!-- 元のコードも一つ残しておく-->
+                <!--
+                <form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >
+                <div class="triangle"> <input type = "hidden" name = "culumn" value = <%=culumn %> >
+                <input type = "hidden" name = "question" value = <%=question %>>
+                <input type = "hidden" name = "answer" value = "はい">
+                <input type = "hidden" name = "pass" value = "false" >
+                <input type="submit"   value="はい" class="button">
+                </div>
+                </form>
+                -->
+
+                <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
+                <form method = "post" action = "/main/{{key}}">
+                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                        <input type = "hidden" name = "question" value = "{{question}}">-->
+                                        <input type = "hidden" name = "answer" value = 0>
+                                        <input type = "hidden" name = "path" value = 0>
+                                        <input type = "submit" value = "はい" class = "button">
+                    </div>
+                </form>
+                <br>
+
+                <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
+                <form method = "post" action = "/main/{{key}}">
+                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                        <input type = "hidden" name = "question" value = "{{question}}"> -->
+                                        <input type = "hidden" name = "answer" value = 1>
+                                        <input type = "hidden" name = "path" value = 0>
+                                        <input type = "submit" value = "いいえ" class = "button">
+                    </div>
+                </form>
+                <br>
+
+                <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
+                <form method = "post" action = "/main/{{key}}">
+                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                        <input type = "hidden" name = "question" value = "{{question}}">--> 
+                                        <input type = "hidden" name = "answer" value = 2>
+                                        <input type = "hidden" name = "path" value = 0>
+                                        <input type = "submit" value = "わからない" class = "button">
+                    </div>
+                </form>
+                <br>
+
+                <!--<form action="<%=request.getContextPath() %>/abunetor/mainS" method="post" >-->
+                <form method = "post" action = "/main/{{key}}">
+                    <div class="triangle"> <!-- <input type = "hidden" name = "culumn" value = "{{culumn}}">
+                                        <input type = "hidden" name = "question" value = "{{question}}">--> 
+                                        <input type = "hidden" name = "answer" value = 2>
+                                        <input type = "hidden" name = "path" value = 1>
+                                        <input type = "submit" value = "前の質問に戻る" class= "button">
+                                        <!-- このボタンが押された時のみ、pathを1にしてBranch.pyに送ります -->
+                    </div>
+                </form>
+
+                <br>
+                <br>
+
+                </import>
+            </div>
+            <div>
+                <img src="../static/imgs/character_program.png" alt="人工知能画像" title="人工知能の画像">
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,178 @@
+body {
+	margin: auto;
+	background: linear-gradient(#FC876E, #FCF26E ) fixed;
+    }
+
+#wrap {
+	position: relative;
+	height:100%;
+	max-width: 80%;
+	background-color: #ffffff;
+	margin: 0 auto;
+}
+
+h1{
+	padding:30px 0 0 20px;
+}
+
+hr {
+	margin:-15px 0 50px 0;
+}
+.f-big:first-letter{
+	color:#DB1D32;
+}
+
+/*クリックした後も色を変えない*/
+.f-big a:visited{
+	color: #414444;
+}
+
+/*カーソル合わせた時に不透明にする*/
+.f-big a:hover{
+	opacity: 0.7;
+}
+
+a{
+	text-decoration: none ;
+	color:black;
+}
+
+.dai{
+	background: linear-gradient(transparent 60%, #ffff66 40%);
+	width:75px;
+}
+
+/*吹き出しの指定*/
+.box {
+	position: relative;
+	display: inline-block;
+	margin: 0 0 1.5em 15px;
+	padding: 7px 10px;
+	color: #555;
+	font-size: 16px;
+	background: #FFF;
+	border: solid 3px #555;
+	box-sizing: border-box;
+	width: 300px;/*吹き出しの幅*/
+	height: 100px;
+	margin-right:230px;
+	border-radius:10px;
+}
+
+
+.box:before {
+	content: "";
+	position: absolute;
+	top: 50%;/*真ん中*/
+	left: -24px;
+	margin-top: -12px;/*三角の横の幅*/
+	border: 12px solid transparent;
+	border-right: 12px solid #FFF;
+	z-index: 2;
+}
+
+.box:after {
+	content: "";
+	position: absolute;
+	top: 50%;/*真ん中*/
+	left: -30px;
+	margin-top: -14px;
+	border: 14px solid transparent;/*三角を作る*/
+	border-right: 14px solid #555;
+	z-index: 1;
+}
+
+img{
+	/*コードの一部書き換え*/
+	/*float:clear;*/
+	clear: right;
+	margin-left:230px;
+}
+
+.box p {
+	margin: 0;
+	padding: 0;
+}
+
+#TotleAnswer{
+	float:right;
+}
+.answer{
+	position: relative;
+	margin-left:17px;
+}
+
+/*.answer a{
+	margin-left:10px;
+}
+.answer a:hover{
+	background-color:#555;
+	color:#fff;
+}
+.answer a:visited{
+}
+
+.answer:before{
+	position:absolute;
+	content:"";
+	width: 0;
+	height: 0;
+	content:"";
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #555;
+	paddeing:10px;
+}
+*/
+.triangle{
+	position: relative;
+	margin-left:17px;
+}
+.button {
+	font-weight:bold;
+	font-size:17px;
+	position: relative;
+	margin-left:24px;
+	display: inline-block;
+	text-align: center;      /* 文字位置   */
+	cursor        : pointer;     /* カーソル   */
+	background    : #ffffff;     /* 背景色     */
+	color         : #555;     /* 文字色     */
+	line-height   : 1em;         /* 1行の高さ  */
+	transition    : .3s;         /* なめらか変化 */
+	border        : 2px solid #ffffff;    /* 枠の指定 */
+}
+
+.button:hover {
+	color         : #ffffff;     /* 背景色     */
+	background    : #555;     /* 文字色     */
+}
+
+.triangle:before{
+	position:absolute;
+	content:"";
+	width: 0;
+	height: 0;
+	border-color: #080808;
+	border-width: 10px;
+	border-style: solid;
+	border-radius: 10px;
+}
+
+/* 「RightToLeft」の動作内容 */
+@keyframes LeftToRight {
+	0% {
+    opacity: 0;/* 透明 */
+    transform: translateX(-10px);/* X軸方向に50px */
+	}
+	100% {
+    opacity: 1;/* 不透明 */
+    transform: translateX(0);
+	}
+}
+
+/* 「RightToLeft」を適用する箇所 */
+.button {
+  animation-duration: 1.5s;/* アニメーション時間 */
+  animation-name: LeftToRight;/* アニメーション名 */
+}
