@@ -60,6 +60,18 @@ stages:
       displayName: 'Upload package'
       artifact: drop
 
+- stage: Test
+  displayName: Test stage
+  jobs:
+  -job: Linux
+  - script: |
+    python -m pip install flake8
+    flake8 .
+  displayName: 'Run lint tests'
+    pool:
+      vmImage: $(vmImageName)
+  
+
 - stage: Deploy
   displayName: 'Deploy Web App'
   dependsOn: Build
