@@ -47,12 +47,6 @@ stages:
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
     
-    - script: |
-        python -m pip install flake8
-        flake8 app.py
-      workingDirectory: $(projectRoot)
-      displayName: "Testing with flake8"   
-
     - task: ArchiveFiles@2
       displayName: 'Archive files'
       inputs:
@@ -69,9 +63,14 @@ stages:
 - stage: Test
   displayName: 'Testing app'
   jobs:
-    - job : Linux
-  pool:
-    vmImage: $(vmImageName) 
+  - job: TestJob
+    steps:
+    - script: |
+        pip install pytest
+        pip install pytest-cov
+        pytest app.py
+        pytest counter.py
+    displayName: 'Test with pytest'
 
 - stage: Deploy
   displayName: 'Deploy Web App'
