@@ -29,4 +29,4 @@ def TotalCount():
 
 if __name__ == '__main__':
     # スクリプトとして実行された場合の処理
-    unittest.main(verbosity=2)
+    unittest.main()

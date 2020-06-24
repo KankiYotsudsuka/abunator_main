@@ -46,6 +46,12 @@ stages:
         pip install -r requirements.txt
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
+    
+    - script: |
+        python -m pip install flake8
+        flake8 app.py
+      workingDirectory: $(projectRoot)
+      displayName: "Testing with flake8"   
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
@@ -61,16 +67,11 @@ stages:
       artifact: drop
 
 - stage: Test
-  displayName: Test stage
+  displayName: 'Testing app'
   jobs:
-  -job: Linux
-  - script: |
-    python -m pip install flake8
-    flake8 .
-  displayName: 'Run lint tests'
-    pool:
-      vmImage: $(vmImageName)
-  
+    - job : Linux
+  pool:
+    vmImage: $(vmImageName) 
 
 - stage: Deploy
   displayName: 'Deploy Web App'
