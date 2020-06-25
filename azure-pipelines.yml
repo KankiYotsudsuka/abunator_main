@@ -70,9 +70,9 @@ stages:
       inputs:
         versionSpec: '$(pythonVersion)'            
     - script: |
-        python -m pip install flake8
-        flake8 app.py
-      displayName: 'Run lint tests'
+        python -m pip install pytest
+        python -m pytest test_counter.py
+      displayName: 'Run with pytest'
 
 
 - stage: Deploy
