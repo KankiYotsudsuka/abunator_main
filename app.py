@@ -93,14 +93,6 @@ def branch(key):
         return render_template('/unknown.html',
         key = linker)
 
-
-#    elif count >= 2 and len(counter.ColumnList) < 18:
-#        return render_template('/main.html',\
-#        key = linker,\
-#        question = sqlMethods.questionVerse(sqlMethods.getCalm(counter.ColumnList)))
-
-
-#    elif count >= 2 and len(counter.ColumnList) >= 1:
     elif count >= 2:
         column = Examine.getCulumn()
         question = Examine.getQuestion(column)

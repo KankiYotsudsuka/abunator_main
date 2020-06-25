@@ -53,9 +53,8 @@ def getCulumn():
 #        counter.ColumnList.append(culumn)
         return culumn
 
-    else:
+    elif(len(counter.QuestionList) > 35):
         culumn = "individuality"
-        counter.ColumnList.append(culumn)
         return culumn
 
 def getQuestion(culumn):
