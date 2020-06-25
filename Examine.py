@@ -60,8 +60,7 @@ def getCulumn():
 
 def getQuestion(culumn):
     if len(counter.QuestionList) < 14:
-        num = len(counter.QuestionList)
-        question = questionList[num]
+        question = questionVerse(culumn)
 #        counter.QuestionList.append(question)
 #        return 'それは'+ str(question) + '？'
         return question
@@ -77,3 +76,14 @@ def getQuestion(culumn):
 #                counter.QuestionList.append(question)
 #                return 'それは'+ str(question) + '？'
                 return question
+
+def questionVerse (calm):
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            cur.execute("SELECT "+ calm +", count("+ calm +") AS COUNT FROM maintable GROUP BY "+ calm +" ORDER BY COUNT desc;")
+            results = cur.fetchall()
+    for i in results:
+        question=i[0]
+        break
+#    counter.QuestionList.append(question)
+    return question
