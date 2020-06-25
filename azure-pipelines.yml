@@ -71,6 +71,7 @@ stages:
         versionSpec: '$(pythonVersion)'            
     - script: |
         python -m pip install pytest
+        python -m pip install psycopg2
         python -m pytest test_counter.py
       displayName: 'Run with pytest'
 
