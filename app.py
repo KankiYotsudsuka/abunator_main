@@ -58,7 +58,6 @@ def branch(key):
     column = counter.ColumnList[len(counter.ColumnList)-1]
     question = counter.QuestionList[len(counter.QuestionList)-1]
 
-
     del PathList[len(PathList)-1]
     PathList.append(int(path))
 
