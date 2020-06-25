@@ -52,6 +52,16 @@ def resDealing(number):
         break
     return str(Vahagn)
 
+def resRank(no):
+    with get_connection() as con:
+            with con.cursor() as cur:
+                cur.execute("select danger from maintable where no = " + str(no))
+                results = cur.fetchall()
+    for i in results:
+        mihr = i[0]
+        break
+    return str(mihr)
+
 #変数としてresNumberの結果を記録し、それを鍵として、動物の名前と画像とコメントを取り出す
 
 def insert(no,name):

@@ -80,6 +80,7 @@ def branch(key):
         number = result.resNumber()
         name = result.resName(number)
         dealing = result.resDealing(number)
+        rank = result.resRank(number)
         no = str(linker[0:10])
         result.insert(no,name)
         return render_template('/result.html',\
@@ -87,7 +88,8 @@ def branch(key):
         number = number,\
         name = name,\
         no = no,\
-        dealing = dealing)
+        dealing = dealing,\
+        rank = rank)
 
     elif count == 0 or len(counter.ColumnList) >= 50:
         return render_template('/unknown.html',
