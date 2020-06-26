@@ -82,6 +82,8 @@ def branch(key):
         name = resultList[1]
         dealing = resultList[2]
         rank = resultList[3] 
+        userNo = linker[0:10]
+        result.insert(userNo,name)
         return render_template('/result.html',\
         number = no,\
         name = name,\
