@@ -77,19 +77,18 @@ def branch(key):
         question = counter.QuestionList[len(counter.QuestionList)-1])
 
     elif count == 1:
-        number = result.resNumber()
-        name = result.resName(number)
-        dealing = result.resDealing(number)
-        rank = result.resRank(number)
-        no = str(linker[0:10])
-        result.insert(no,name)
+        resultList = result.result()
+        no = resultList[0]
+        name = resultList[1]
+        dealing = resultList[2]
+        rank = resultList[3] 
         return render_template('/result.html',\
-        key = linker,\
-        number = number,\
+        number = no,\
         name = name,\
-        no = no,\
         dealing = dealing,\
-        rank = rank)
+        rank = rank,\
+        key = linker)
+
 
     elif count == 0 or len(counter.ColumnList) >= 50:
         return render_template('/unknown.html',

@@ -64,7 +64,6 @@ def getMaxCalm(calm):
     for i in results:
         number=i[1]
         break
-
     return int(number)
 
 def questionVerse (calm):
@@ -75,9 +74,7 @@ def questionVerse (calm):
     for i in results:
         question=i[0]
         break
-
-    counter.QuestionList.append(question)
-    return "それは"+question+"？"
+    return question
 
 def getCalm(list):
     MAX=0
@@ -97,8 +94,6 @@ def getCalm(list):
             if(MAX<getMaxCalm(baseList[i])):
                 MAX=getMaxCalm(baseList[i])
                 buriburi= baseList[i]
-
-    counter.ColumnList.append(buriburi)
     return buriburi
 
 

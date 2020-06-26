@@ -71,3 +71,18 @@ def insert(no,name):
 #                cur.execute("insert into record values(" + no + ",'" + name + "')")
 
 #今回の結果はDBに記録され、次にアプリを起動した場合に「前回の結果」として表示される
+
+def result():
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            #SQL文実行
+            cur.execute('select * from maintable where ' + counter.SQLMaker())
+            results = cur.fetchall()
+    for i in results:
+        no = str(i[0])
+        name = str(i[1])
+        dealing = str(i[17])
+        rank = str(i[18])
+        resultList = [no,name,dealing,rank]
+        break
+    return resultList
