@@ -26,6 +26,7 @@ def setColumnList():
     counter.ColumnList.append("no")
     counter.ColumnList.append("name")
     counter.ColumnList.append("dealing")
+    counter.ColumnList.append("danger")
 
 def setQuestionList():
     counter.QuestionList.clear()
